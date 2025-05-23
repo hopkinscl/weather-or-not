@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Weather or Not</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather or Not</h1>
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="location-input" placeholder="Enter city name">
+                    <button id="search-btn">Search</button>
+                </div>
+            </div>
+            <div class="auth-container"></div>
+        </header>
+
+        <main>
+            <div class="current-weather">
+                <div class="weather-info">
+                    <div class="weather-icon">☀️</div>
+                    <div class="weather-details">
+                        <h2 id="city-name">--</h2>
+                        <p id="weather-description">--</p>
+                        <p id="current-date">--</p>
+                    </div>
+                </div>
+                <div class="temp-info">
+                    <span id="temperature">--°</span>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-card">
+                    <h3>Temperature</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="temp-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Precipitation</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="precip-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div id="forecast" class="forecast"></div>
+            </div>
+
+            <div class="saved-places-container">
+                <h3>Saved Places</h3>
+                <div id="saved-places-list" class="saved-places-list">
+                    <p class="no-places-message">No saved places yet.</p>
+                </div>
+                <div class="saved-places-actions">
+                    <button id="save-place-btn">Save Current Place</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

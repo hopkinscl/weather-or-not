@@ -1,0 +1,382 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Onest', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #F96635; /* Solid orange background like the mockup */
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #FAECB6; /* Cream background */
+    border-radius: 40px; /* More rounded corners like the mockup */
+    box-shadow: 0 10px 30px rgba(249, 102, 53, 0.2);
+    position: relative;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+h1 {
+    color: #F96635;
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    text-align: left;
+    width: 100%;
+    line-height: 1.1;
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: #FAECB6; /* Match background */
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 4px 15px rgba(249, 102, 53, 0.1);
+    transition: all 0.3s;
+    border: 1px solid rgba(249, 102, 53, 0.3);
+}
+
+.search-container:focus-within {
+    box-shadow: 0 6px 20px rgba(249, 102, 53, 0.15);
+    border-color: #F96635;
+}
+
+#location-input {
+    flex: 1;
+    padding: 12px 5px 12px 15px;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    color: #F96635;
+    font-family: 'Onest', sans-serif;
+    opacity: 0.8;
+}
+
+#location-input::placeholder {
+    color: rgba(249, 102, 53, 0.6);
+    font-family: 'Onest', sans-serif;
+}
+
+#get-location {
+    background-color: transparent;
+    color: #2BBAA5;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#get-location:hover {
+    color: #F96635;
+    transform: scale(1.1);
+}
+
+#search-btn {
+    background: linear-gradient(to right, #F96635, #F9A822);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(249, 102, 53, 0.2);
+    margin-left: 5px;
+    font-family: 'Onest', sans-serif;
+}
+
+#search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 102, 53, 0.3);
+}
+
+/* Auth container */
+.auth-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.auth-container button {
+    background: white;
+    color: #F96635;
+    border: 1px solid #F9A822;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(249, 102, 53, 0.1);
+    font-family: 'Onest', sans-serif;
+}
+
+.auth-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 102, 53, 0.15);
+    background: #FAECB6;
+}
+
+#login-btn {
+    background: linear-gradient(to right, #F96635, #F9A822);
+    color: white;
+    border: none;
+}
+
+#logout-btn {
+    background: linear-gradient(to right, #F96635, #93D3AE);
+    color: white;
+    border: none;
+}
+
+/* Current weather section */
+.current-weather {
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 50px 0;
+    max-width: 800px;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-icon {
+    font-size: 7rem;
+    margin-right: 0;
+    line-height: 1;
+}
+
+.weather-icon i {
+    font-size: 7rem;
+}
+
+/* Weather icon colors */
+.wi-day-sunny {
+    color: #F9A822; /* Golden yellow for sun */
+}
+
+.wi-night-clear {
+    color: #F9A822; /* Matching yellow for moon for consistency */
+}
+
+.wi-cloudy, .wi-day-cloudy, .wi-night-alt-cloudy {
+    color: #2BBAA5; /* Teal for clouds */
+}
+
+.wi-rain, .wi-day-showers, .wi-night-alt-showers {
+    color: #2BBAA5; /* Teal for rain */
+}
+
+.wi-snow {
+    color: #2BBAA5; /* Teal for snow */
+}
+
+.wi-thunderstorm {
+    color: #F96635; /* Orange for thunderstorms */
+}
+
+.wi-fog {
+    color: #2BBAA5; /* Teal for fog/mist */
+}
+
+#city-name {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #F96635;
+}
+
+#weather-description {
+    font-size: 2.5rem;
+    color: #F96635;
+    margin-top: 0;
+    font-weight: 600;
+    order: 2;
+}
+
+#temperature {
+    font-size: 10rem;
+    font-weight: 700;
+    color: #F96635;
+    line-height: 1;
+    position: relative;
+}
+
+#temperature::after {
+    content: "°";
+    font-size: 4rem;
+    position: absolute;
+    top: 15px;
+    right: -30px;
+}
+
+/* Forecast items */
+.forecast {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 1000px;
+}
+
+.forecast-item {
+    background-color: transparent;
+    border-right: 1px dashed rgba(249, 102, 53, 0.2);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.forecast-item:last-child {
+    border-right: none;
+}
+
+.forecast-date {
+    font-weight: 700;
+    color: #F96635;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.forecast-temp {
+    color: #F96635;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    line-height: 1;
+}
+
+/* Add a second temperature display for low temp in teal */
+.forecast-temp-low {
+    color: #2BBAA5;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.forecast-section {
+    margin-bottom: 40px;
+}
+
+.forecast-section h3 {
+    color: #F96635;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.forecast-icon {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.forecast-icon i {
+    font-size: 2.5rem;
+}
+
+/* Chart cards */
+.chart-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.chart-card {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 30px;
+    flex: 1;
+}
+
+.chart-card h3 {
+    color: #F96635;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Save place button */
+.saved-places-container {
+    max-width: 600px;
+}
+
+.saved-places-container h3 {
+    color: #F96635;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.saved-places-list {
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.no-places-message {
+    color: #F96635;
+    opacity: 0.7;
+}
+
+#save-place-btn {
+    width: 100%;
+    background: linear-gradient(to right, #F96635, #F9A822);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(249, 102, 53, 0.15);
+    font-family: 'Onest', sans-serif;
+}
+
+#save-place-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 102, 53, 0.25);
+}
