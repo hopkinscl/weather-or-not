@@ -14,11 +14,16 @@
 <body>
     <div class="container">
         <header>
-            <h1>Weather or Not</h1>
+            <div class="header-top">
+                <h1>Weather or Not</h1>
+                <button id="dark-mode-toggle" class="theme-toggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
             <div class="search-section">
                 <div class="search-container">
                     <input type="text" id="location-input" placeholder="Enter city name">
-                    <button id="search-btn">Search</button>
+                    <button id="search-btn" onclick="handleSearch()">Search</button>
                 </div>
             </div>
             <div class="auth-container"></div>
@@ -27,15 +32,17 @@
         <main>
             <div class="current-weather">
                 <div class="weather-info">
-                    <div class="weather-icon">☀️</div>
                     <div class="weather-details">
                         <h2 id="city-name">--</h2>
-                        <p id="weather-description">--</p>
                         <p id="current-date">--</p>
+                                            <div class="weather-data-row">
+                            <div class="temp-info">
+                                <span id="temperature">--</span>
+                            </div>
+                            <div class="weather-icon">☀️</div>
+                            <p id="weather-description">--</p>
+                        </div>
                     </div>
-                </div>
-                <div class="temp-info">
-                    <span id="temperature">--°</span>
                 </div>
             </div>
 
@@ -51,6 +58,63 @@
                     <div class="chart-wrapper">
                         <canvas id="precip-chart"></canvas>
                     </div>
+                </div>
+            </div>
+
+            <div class="environmental-data">
+                <div class="env-card">
+                    <div class="env-header">
+                        <h3>UV Index</h3>
+                        <div class="env-icon">☀️</div>
+                    </div>
+                    <div class="env-value">
+                        <span id="uv-index">--</span>
+                        <span class="env-unit">UV</span>
+                    </div>
+                    <div class="env-description">
+                        <span id="uv-description">Loading...</span>
+                    </div>
+                </div>
+                <div class="env-card">
+                    <div class="env-header">
+                        <h3>Air Quality</h3>
+                        <div class="env-icon">🌬️</div>
+                    </div>
+                    <div class="env-value">
+                        <span id="air-quality-index">--</span>
+                        <span class="env-unit">AQI</span>
+                    </div>
+                    <div class="env-description">
+                        <span id="air-quality-description">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations-section">
+                <h3>Recommendations</h3>
+                <div class="recommendations-nav">
+                    <button class="rec-nav-btn active" data-category="activities">
+                        <span class="nav-icon">🏃</span>
+                        Activities
+                    </button>
+                    <button class="rec-nav-btn" data-category="kids">
+                        <span class="nav-icon">👶</span>
+                        Kids
+                    </button>
+                    <button class="rec-nav-btn" data-category="outfits">
+                        <span class="nav-icon">👕</span>
+                        Outfits
+                    </button>
+                    <button class="rec-nav-btn" data-category="gardening">
+                        <span class="nav-icon">🌱</span>
+                        Gardening
+                    </button>
+                </div>
+                <div id="recommendations-content" class="recommendations-content">
+                    <div id="activities-list" class="recommendations-list active"></div>
+                    <div id="kids-list" class="recommendations-list"></div>
+                    <div id="outfits-list" class="recommendations-list"></div>
+                    <div id="gardening-list" class="recommendations-list"></div>
                 </div>
             </div>
 
