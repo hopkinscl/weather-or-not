@@ -771,7 +771,7 @@ function updateCurrentWeather(data, cityName) {
         weatherIcon.innerHTML = createWeatherIconHTML(iconClass);
     }
     
-    temperatureElement.textContent = `${celsiusToFahrenheit(data.current.temperature)}°F`;
+    temperatureElement.innerHTML = `${celsiusToFahrenheit(data.current.temperature)}<span class="temp-unit">°F</span>`;
     weatherDescriptionElement.textContent = data.current.weather_descriptions[0];
     
     // Update recommendations
